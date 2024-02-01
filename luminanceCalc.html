@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Darkness Checker</title>
+</head>
+<body>
+
+<script>
+  function isColorDark(color) {
+    // Check if the color is in hexadecimal format
+    if (/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(color)) {
+      // Convert hex to RGB
+      let hex = color.replace(/^#/, '');
+      let rgb = parseInt(hex, 16);
+      let r = (rgb >> 16) & 0xff;
+      let g = (rgb >> 8) & 0xff;
+      let b = (rgb >> 0) & 0xff;
+
+      // Calculate luminance
+      let luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+
+      // Check if the luminance is below a threshold (adjust as needed)
+      if(luminance < 120){
+        console.log("pp")
+      }
+      else{
+        console.log("no pp")
+      }
+  }
+}
+  // Example usage
+  const darkColor = "#333333";
+  const lightColor = "#ffffff";
+
+  console.log(`${darkColor} is dark: ${isColorDark(darkColor)}`);
+  console.log(`${lightColor} is dark: ${isColorDark(lightColor)}`);
+</script>
+
+</body>
+</html>

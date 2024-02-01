@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap');
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    background-color: #222831;
+    gap: 30px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+    display: grid;
+}
+
+.box{
+    background-color: white;
+    border: solid 1px black;
+    transition: all 0.5s;
+}
+
+.colors, .settings{
+    height: 100px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.colorBtn, .settingsBtn{
+    background-color: rgb(22, 22, 22);
+    flex: 1;
+    height: 75px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.button > input{
+    padding: 0;
+}
+
+.gridSize{
+    cursor: auto;
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.gridSize > button{
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    height: 30px;
+    width: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gridToggle{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+@keyframes btnEffect{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Etch-A-Sketch</h1>
+    <div class="colors">
+        <div class="black colorBtn">Black</div>
+        <div class="rainbow colorBtn">Rainbow</div>
+        <div class="eraser colorBtn">Eraser</div>
+        <div class="backgroundInput colorBtn">
+            BG:
+            <input type="color" id="bg">
+        </div>
+        <div class="colorInput colorBtn">
+            PEN:
+            <input type="color" value="#000000" id="pen">
+        </div>
+    </div>
+    <div id="container"></div>
+    <div class="settings">
+        <div class="clear settingsBtn">Clear</div>
+        <div class="gridSize settingsBtn">
+            <button id="removeBoxes">-</button>
+            <span>16x16</span>
+            <button id="addBoxes">+</button>
+        </div>
+        <div class="gridToggle settingsBtn">Grid: ON</div>
+    </div>
+</body>
+</html>
