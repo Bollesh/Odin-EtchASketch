@@ -72,18 +72,18 @@ boxColoring();
 
 let colorPicker = document.querySelector('#pen');
 let selectedColor = document.querySelector("#pen").value;
+let bgColorPicker = document.querySelector("#bg");
 let afterErase;
 colorPicker.addEventListener('input', () => {
     rainbowEffect("OFF");
     selectedColor = document.querySelector("#pen").value;
 });
 colorPicker.addEventListener('click', () => {
-    if(selectedColor == ""){
+    if(selectedColor == document.querySelector("#bg").value){
         selectedColor = afterErase;
     }
 });
 
-let bgColorPicker = document.querySelector("#bg");
 bgColorPicker.addEventListener('input', () => {
     boxes.forEach(box => {
         box.style.backgroundColor = document.querySelector('#bg').value;
