@@ -5,6 +5,7 @@ document.querySelector("#pen").value = "#000000";
 document.querySelector('#bg').value = "#ffffff"
 let boxes;
 let gridStatus = "ON";
+let bgColorPicker = document.querySelector("#bg");
 
 mainContainer.style.backgroundColor = "black";
 
@@ -15,13 +16,14 @@ function makeBoxes(){
         for(let j = 0; j < numberOfBoxes; j++){
             let box = document.createElement('div');
             box.classList.add('box');
+            box.style.backgroundColor = document.querySelector("#bg").value;
             mainContainer.appendChild(box);
         }
         columns += " auto";
     }
-
     mainContainer.style.gridTemplateColumns = columns;
     boxes = document.querySelectorAll('.box');
+    gridColor();
 }
 
 makeBoxes();
@@ -72,7 +74,6 @@ boxColoring();
 
 let colorPicker = document.querySelector('#pen');
 let selectedColor = document.querySelector("#pen").value;
-let bgColorPicker = document.querySelector("#bg");
 let afterErase;
 colorPicker.addEventListener('input', () => {
     rainbowEffect("OFF");
@@ -87,8 +88,12 @@ colorPicker.addEventListener('click', () => {
 bgColorPicker.addEventListener('input', () => {
     boxes.forEach(box => {
         box.style.backgroundColor = document.querySelector('#bg').value;
+        gridColor();
+    });
+});
 
-
+function gridColor(){
+    boxes.forEach(box => {
         // Convert hex to RGB
         let hex = document.querySelector('#bg').value.replace(/^#/, '');
         let rgb = parseInt(hex, 16);
@@ -102,9 +107,11 @@ bgColorPicker.addEventListener('input', () => {
         if(luminance < 120){
             box.style.border = "solid 1px white";
         }
-
+        else{
+            console.log("pp");
+        }
     });
-});
+}
 
 let black = document.querySelector('.black');
 black.addEventListener('click', () => {
