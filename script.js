@@ -85,6 +85,10 @@ colorPicker.addEventListener('click', () => {
     }
 });
 
+document.querySelector('.colorInput').addEventListener('click', () => {
+    rainbowEffect("OFF");
+});
+
 bgColorPicker.addEventListener('input', () => {
     boxes.forEach(box => {
         box.style.backgroundColor = document.querySelector('#bg').value;
@@ -132,7 +136,8 @@ function rainbowEffect(rainbowStatus){
         selectedColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
         RainbowInterval = setInterval(() => {
             selectedColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-        }, 500)
+            document.querySelector("#pen").value = selectedColor;
+        }, 100)
     }
     else if(rainbowStatus == "OFF"){
         clearInterval(RainbowInterval);
