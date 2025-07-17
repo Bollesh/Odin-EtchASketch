@@ -112,7 +112,7 @@ function gridColor(){
             box.style.border = "solid 1px white";
         }
         else{
-            console.log("pp");
+            box.style.border = "solid 1px black";
         }
     });
 }
